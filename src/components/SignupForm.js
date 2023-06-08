@@ -76,9 +76,9 @@ const SignupForm = ({ setIsLoggedIn }) => {
         </button>
       </div>
 
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="max-w-screen-md mx-auto">
         {/* first name and lastName */}
-        <div className="flex gap-x-4 mt-[20px]">
+        <div className="flex flex-col md:flex-row gap-x-4 mt-[20px]">
           <label className="w-full">
             <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
               First Name<sup className="text-pink-200">*</sup>
@@ -128,7 +128,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
         </div>
 
         {/* createPassword and Confirm Password */}
-        <div className="w-full flex gap-x-4 mt-[20px]">
+        <div className="w-full flex flex-col md:flex-row gap-x-4 mt-[20px]">
           <label className="w-full relative">
             <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
               Create Password<sup className="text-pink-200">*</sup>
@@ -179,7 +179,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
             </span>
           </label>
         </div>
-        <button className=" w-full bg-yellow-50 rounded-[8px] font-medium text-richblack-900 px-[12px] py-[8px] mt-6">
+        <button className="w-full bg-yellow-50 rounded-[8px] font-medium text-richblack-900 px-[12px] py-[8px] mt-6">
           Create Account
         </button>
       </form>

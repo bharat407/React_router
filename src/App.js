@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import { useState } from "react";
 import PrivateRoute from "./components/PrivateRoute";
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -37,6 +38,17 @@ function App() {
           }
         />
       </Routes>
+
+      {/* Media Query for screens smaller than md */}
+      <style>
+        {`
+        @media (max-width: 767px) {
+          .flex-col {
+            flex-direction: column;
+          }
+        }
+        `}
+      </style>
     </div>
   );
 }

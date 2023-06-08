@@ -8,7 +8,7 @@ const Navbar = (props) => {
   let setIsLoggedIn = props.setIsLoggedIn;
 
   return (
-    <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto">
+    <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto lg:px-4">
       <Link to="/">
         <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
       </Link>
@@ -29,49 +29,52 @@ const Navbar = (props) => {
 
       {/* Login - SignUp - LogOut - Dashboard */}
       <div className="flex items-center gap-x-4">
+        {/* Login and SignUp buttons */}
         {!isLoggedIn && (
-          <Link to="/login">
-            <button
-              className="bg-richblack-800 text-richblack-100 py-[8px] 
-                    px-[12px] rounded-[8px] border border-richblack-700"
-            >
-              Log in
-            </button>
-          </Link>
+          <React.Fragment>
+            <Link to="/login">
+              <button
+                className="bg-richblack-800 text-richblack-100 py-[8px] 
+                      px-[12px] rounded-[8px] border border-richblack-700"
+              >
+                Log in
+              </button>
+            </Link>
+            <Link to="/signup">
+              <button
+                className="bg-richblack-800 text-richblack-100 py-[8px] 
+                      px-[12px] rounded-[8px] border border-richblack-700"
+              >
+                Sign up
+              </button>
+            </Link>
+          </React.Fragment>
         )}
-        {!isLoggedIn && (
-          <Link to="/signup">
-            <button
-              className="bg-richblack-800 text-richblack-100 py-[8px] 
-                    px-[12px] rounded-[8px] border border-richblack-700"
-            >
-              Sign up
-            </button>
-          </Link>
-        )}
+
+        {/* Logout and Dashboard buttons */}
         {isLoggedIn && (
-          <Link to="/">
-            <button
-              onClick={() => {
-                setIsLoggedIn(false);
-                toast.success("Logged Out");
-              }}
-              className="bg-richblack-800 text-richblack-100 py-[8px] 
-                    px-[12px] rounded-[8px] border border-richblack-700"
-            >
-              Log Out
-            </button>
-          </Link>
-        )}
-        {isLoggedIn && (
-          <Link to="/dashboard">
-            <button
-              className="bg-richblack-800 text-richblack-100 py-[8px] 
-                    px-[12px] rounded-[8px] border border-richblack-700"
-            >
-              Dashboard
-            </button>
-          </Link>
+          <React.Fragment>
+            <Link to="/">
+              <button
+                onClick={() => {
+                  setIsLoggedIn(false);
+                  toast.success("Logged Out");
+                }}
+                className="bg-richblack-800 text-richblack-100 py-[8px] 
+                      px-[12px] rounded-[8px] border border-richblack-700"
+              >
+                Log Out
+              </button>
+            </Link>
+            <Link to="/dashboard">
+              <button
+                className="bg-richblack-800 text-richblack-100 py-[8px] 
+                      px-[12px] rounded-[8px] border border-richblack-700"
+              >
+                Dashboard
+              </button>
+            </Link>
+          </React.Fragment>
         )}
       </div>
     </div>

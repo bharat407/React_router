@@ -32,7 +32,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
   return (
     <form
       onSubmit={submitHandler}
-      className="flex flex-col w-full gap-y-4 mt-6"
+      className="flex flex-col w-full gap-y-4 mt-6 lg:w-2/3 lg:mx-auto"
     >
       <label className="w-full">
         <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
